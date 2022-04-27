@@ -21,9 +21,6 @@ function Nav_and_logo() {
         <li className="nav-item">
           <a className="nav-link" href="#">Cart</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
         <div>
         <li className=" margin2 nav-item">
           <a className="nav-link" href="#">Login</a>

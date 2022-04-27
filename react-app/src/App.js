@@ -4,10 +4,9 @@ import Login from "./Components/Login/Login";
 function App() {
   return (
     <div className="container">
-      <Login />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Login />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

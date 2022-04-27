@@ -1,0 +1,22 @@
+.section{
+    background-color:antiquewhite;
+    margin-bottom: 5rem;
+    height: 30rem;
+}
+
+.section img{
+    width: 45rem;
+    height: 30rem;
+    object-fit: cover;
+    border-top-right-radius:20px ;
+    border-bottom-right-radius:20px ;
+}
+
+.text{
+    margin-top:60px;
+}
+
+.text > p {
+    padding-top: 20px;
+    font-style: italic;
+}

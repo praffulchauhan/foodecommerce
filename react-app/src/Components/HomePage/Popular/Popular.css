@@ -1,0 +1,40 @@
+.popularRow{
+    margin: 7rem 5rem ;
+}
+.popular{
+    position: relative;
+    margin-top: 30px;
+}
+.popular img{
+    height: 18rem;
+    width: 30rem;
+    border-radius: 15px;
+    transform: scaleX(-1);
+    filter: blur(81px);
+    -webkit-filter: blur(1px);
+}
+.popular-text{
+    position: absolute;
+    top: 40%;
+    margin-left:13%;
+    /* -webkit-transform: translateY(-50%); */
+    /* transform: translateY(-50%); */
+    /* right: 10px; */
+}
+.popular-text h3{
+    color: white;
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: 'Delius Unicase', cursive;
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4);
+}
+
+.popular-text button{
+    margin-left: 30%;
+}
+.second{
+    margin-left: 20%;
+}

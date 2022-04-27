@@ -1,0 +1,40 @@
+.footer{
+    background-color: rgba(100, 103, 105, 0.404);
+}
+
+.address{
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    margin: 2rem 13rem ;
+}
+
+.address img{
+    width: 4rem;
+    height: 3rem;
+    object-fit: cover;
+}
+
+.logo{
+    display: flex;
+}
+
+.logo h2{
+    padding-left: 7px;
+}
+
+.connect{
+    margin: 2rem;
+}
+
+.social{
+    margin-left: 5rem;
+}
+.social a{
+    padding: 10px;
+    font-size: 30px;
+}
+
+.copyright{
+    text-align: center ;
+    margin-bottom: 20px;
+    font-size: 20px;
+}

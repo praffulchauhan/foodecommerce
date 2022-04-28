@@ -1,5 +1,4 @@
 .signup{
-    
     justify-content: center;
     width: 400px;
     background: rgb(49, 180, 231);
@@ -13,5 +12,12 @@
     margin-top: 5rem;
     
 }
+
+.App {
+    text-align: center;
+    justify-content: center;
+    margin-left: 27rem;
+  }
+
 
 

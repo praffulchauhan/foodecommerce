@@ -1,6 +1,7 @@
 import React from "react";
 import "./Cart.css"
 import { useState } from "react";
+import NavLogo from "../HomePage/NavLogo/NavLogo";
 
 const Cart = () => {
   const cartItem = [
@@ -40,12 +41,14 @@ const Cart = () => {
       }
   const totalprice = cartItems.reduce((price,item)=>price+item.quantity*item.price,0)
   return (  
+    <div>
+      <NavLogo/>
    <div className="cart-items">
      <h3 className="cart-items-header">cart Items</h3>
      <div className="cart-items-clear">
        {cartItems.length>0 && (
          <button className="clear-cart-button" onClick={handleCartClearButton}>Clear Cart</button>
-       )}
+         )}
      </div>
        {cartItems.length===0 &&(<div className="cart-items-empty">No item Added</div>)}
        <div>
@@ -73,6 +76,7 @@ const Cart = () => {
        )}
        </div>
    </div>
+    </div>
   )
 };
 

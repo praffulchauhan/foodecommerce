@@ -42,7 +42,26 @@ const Signup = () => {
   }
   
   return (
+    <div>
+      <div className="mynav">
+        <div className="logo">
+          <Link to="/" className="navbar-brand">
+            <img
+              src="https://cdn3.vectorstock.com/i/thumb-large/10/77/food-fox-logo-vector-24171077.jpg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt=""
+            />
+          </Link>
+          <h1 className="logintext">Login</h1>
+          <Link to="/admin/add">
+            <button className="btn btn-primary admin">Admin</button>
+          </Link>
+        </div>
+      </div>
     <div className="App">
+      
       <div className="signup">
         <form onClick={submitHandler} method="POST">
         <h3>Sign Up</h3>
@@ -53,7 +72,7 @@ const Signup = () => {
             className="form-control"
             placeholder="First name"
             onChange={firstnameHandler}
-          />
+            />
         </div>
         <div className="mb-3">
           <label>Last name</label>
@@ -66,7 +85,7 @@ const Signup = () => {
             className="form-control"
             placeholder="Enter email"
             onChange={emailHandler}
-          />
+            />
         </div>
         <div className="mb-3">
           <label>Password</label>
@@ -75,7 +94,7 @@ const Signup = () => {
             className="form-control"
             placeholder="Enter password"
             onChange={passwordHandler}
-          />
+            />
         </div>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
@@ -83,11 +102,12 @@ const Signup = () => {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <Link to="/sign-in">sign in?</Link>
+          Already registered <Link to="/login">Log in?</Link>
         </p>
       </form>
       </div>
       </div>
+    </div>
     );
 };
 

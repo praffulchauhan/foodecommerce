@@ -5,6 +5,7 @@ import MenuC from "./MenuC";
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import UserService from "../Services/UserService";
+import NavLogo from "../HomePage/NavLogo/NavLogo";
 
 const Menu = () => {
 
@@ -38,6 +39,8 @@ const indian=[];
 const chinese=[];
 const mexican=[];
   return(
+    <div>
+      <NavLogo/>
     <div className="divyansh">
       <nav className="top_space options navbar navbar-expand navbar-light bg-warning">
         <div className="container-fluid">
@@ -82,6 +85,7 @@ const mexican=[];
       <Link to='' className='proceed-button btn btn-success'>Proceed to Cart</Link>
 
 
+  </div>
   </div>
 
 )

@@ -3,9 +3,12 @@ const app = express()
 const mongoose = require("mongoose");
 const port = 5000
 
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+app.use("/menu", require("./Routes/menu.js"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

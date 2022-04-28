@@ -5,6 +5,7 @@ import MenuC from "./MenuC";
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import UserService from "../Services/UserService";
+import NavLogo from "../HomePage/NavLogo/NavLogo";
 
 const Menu = () => {
 
@@ -88,6 +89,8 @@ console.log(x)
 
 
   return(
+    <div>
+      <NavLogo/>
     <div className="divyansh">
       <nav className="top_space options navbar navbar-expand navbar-light bg-warning">
         <div className="container-fluid">
@@ -132,6 +135,7 @@ console.log(x)
     
 
 
+  </div>
   </div>
 
 )

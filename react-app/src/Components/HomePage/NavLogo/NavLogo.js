@@ -16,22 +16,22 @@ function NavLogo() {
     <div className="margin collapse navbar-collapse"  id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to='' ><span  style={{color:"white",fontSize:25}}> Home</span></Link>
+          <Link className="nav-link active" aria-current="page" to='/' ><span  style={{color:"white",fontSize:25}}> Home</span></Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to='' ><span  style={{color:"white",fontSize:25}}>Menu</span></Link>
+          <Link className="nav-link" to='/menu' ><span  style={{color:"white",fontSize:25}}>Menu</span></Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to='' ><span  style={{color:"white",fontSize:25}}>Cart</span></Link>
+          <Link className="nav-link" to='/cart' ><span  style={{color:"white",fontSize:25}}>Cart</span></Link>
         </li>
         <div>
         <li className=" margin2 nav-item">
-          <Link className="nav-link" to='' ><span  style={{color:"white",fontSize:25}}>Login</span></Link>
+          <Link className="nav-link" to='/login' ><span  style={{color:"white",fontSize:25}}>Login</span></Link>
         </li>
  </div>
  <div>
         <li className="nav-item">
-          <Link className="nav-link" to='' ><span  style={{color:"white",fontSize:25}}>Sign Up</span></Link>
+          <Link className="nav-link" to='/signup' ><span  style={{color:"white",fontSize:25}}>Sign Up</span></Link>
         </li>
  </div>
 

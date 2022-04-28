@@ -11,13 +11,13 @@
   margin-left: 33rem;
 }
 
-.admin {
+.user {
   margin-left: 28rem;
   height: 2.5rem;
   font-size: 20px;
   border-radius: 1.5rem;
 }
-.admin:hover {
+.user:hover {
   background-color: rgb(49, 180, 231);
 }
 

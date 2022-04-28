@@ -1,0 +1,61 @@
+.navbar-brand {
+  display: flex;
+}
+img {
+  width: 4rem;
+  height: 3rem;
+  object-fit: cover;
+}
+.logo {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  font-size: 30px;
+}
+.navProfile {
+  font-size: 25px;
+  margin-left: 14rem;
+}
+.navProfile li {
+  margin-right: 10px;
+}
+
+.navProfile li:hover {
+  background-color: antiquewhite;
+}
+
+/* .logo{
+    background-color: antiquewhite;
+    height: 5rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.logo img{
+    width: 4rem;
+    height: 3rem;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.dashboard{
+    margin-left: 2rem;
+    background-color: aliceblue;
+    padding: 2rem;
+}
+
+.dashboard ul{
+    list-style: none;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.logo .nav-link{
+    color: black;
+}
+.dashboard .nav-link{
+    color:rgb(197, 161, 61)
+}
+
+.dashboard li:hover{
+    background-color: antiquewhite;
+} */

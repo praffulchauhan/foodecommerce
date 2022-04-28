@@ -1,0 +1,31 @@
+.xyz{
+padding-left:50%;
+padding-top:15%;
+}
+
+.lmn{
+    width:70%;
+    margin-left: 200px;
+}
+
+.flex-container {
+    display: flex;
+   
+  }
+
+  .pqr{
+      margin-top: 40px;
+  }
+
+
+  .dll{
+      display: flex;
+      padding-left: 25px;
+      
+  }
+
+
+  .flm{
+      margin-left: 200px;
+      border-radius: 12px;
+  }

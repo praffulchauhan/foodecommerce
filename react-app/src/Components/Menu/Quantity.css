@@ -1,0 +1,33 @@
+.padding-l{
+    padding-left: 20px;
+}
+
+.ram{
+    display: flex;
+}
+
+input[type=text] {
+    width: 20%;
+    height: 50%;
+    box-sizing: border-box;
+  }
+
+.float-x{
+
+    float:left;
+    width:50%;
+
+}
+.all{
+    margin-left: 30px;
+}
+
+.margin-l{
+    margin-left: 150px;
+    margin-top:-70px;
+
+}
+
+.margin-r{
+    margin-right: 200px;
+}

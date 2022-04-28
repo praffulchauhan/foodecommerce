@@ -5,7 +5,7 @@ const Admin = () => {
   return (
     <div className="myadmin">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to="/admin" className="navbar-brand">
+        <Link to="/admin/add" className="navbar-brand">
           <img
             src="https://cdn3.vectorstock.com/i/thumb-large/10/77/food-fox-logo-vector-24171077.jpg"
             width="30"

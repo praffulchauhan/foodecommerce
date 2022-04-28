@@ -8,7 +8,6 @@ import UserService from "../Services/UserService";
 
 const Menu = () => {
 
-
 var [datax,setDatax] = useState([]);
 const [loading, setLoading] = useState(true);
 
@@ -47,12 +46,12 @@ const mexican=[];
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <div className="left_space">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" onClick={()=>setDatax(pizza)}  to='' >Pizzas</Link>
+                <Link className="nav-link" aria-current="page" onClick={()=>setDatax()}  to='' >Pizzas</Link>
               </li>
               </div>
             <div  className="left_space"> 
               <li className="nav-item">
-                <Link className="nav-link" to=''  onClick={()=>setDatax(burger)}>Burgers</Link>
+                <Link className="nav-link" to=''  onClick={()=>setDatax()}>Burgers</Link>
                 </li>
               </div>
               <div  className="left_space">

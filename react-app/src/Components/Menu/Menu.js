@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css'
 import MenuC from "./MenuC";
 import { useState } from "react";
 import {Link} from "react-router-dom";
+import UserService from "../Services/UserService";
 
 const Menu = () => {
 
@@ -48,9 +49,19 @@ const mexican = {}
 
 
 
-var [datax,setDatax] = useState(pizza);
+var [datax,setDatax] = useState([]);
 
-
+useEffect(() => {
+ 
+  UserService.get_product()
+  .then((res)=>{
+    if (res.data !== ''){
+      console.log(res.data)
+      setDatax(res.data) 
+    }
+  })
+  
+},[])
 
   return(
     <div className="divyansh">

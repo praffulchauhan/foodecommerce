@@ -1,23 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./LoginAdmin.css";
 
-const Login = () => {
-  const emailChangeHandler = (event) => {
-    console.log(event.target.value);
-  };
-  const passwordChangeHandler = (e) => {
-    console.log(e.target.value);
-  };
-  const loginHandler = (event) => {
-    event.preventDefault();
-  };
-
+const LoginAdmin = () => {
   return (
     <div>
       <div className="mynav">
         <div className="logo">
-          <Link to="/login" className="navbar-brand">
+          <Link to="/login/admin" className="navbar-brand">
             <img
               src="https://cdn3.vectorstock.com/i/thumb-large/10/77/food-fox-logo-vector-24171077.jpg"
               width="30"
@@ -27,13 +17,13 @@ const Login = () => {
             />
           </Link>
           <h1 className="logintext">Login</h1>
-          <Link to="/login/admin">
-            <button className="btn btn-primary admin">Admin</button>
+          <Link to="/login">
+            <button className="btn btn-primary user">User</button>
           </Link>
         </div>
       </div>
       <div className="login">
-        <form onSubmit={loginHandler}>
+        <form>
           <h3>Login</h3>
           <div className="mb-3">
             <label>Email address</label>
@@ -41,7 +31,6 @@ const Login = () => {
               type="email"
               className="form-control"
               placeholder="Enter email"
-              onChange={emailChangeHandler}
             />
           </div>
           <div className="mb-3">
@@ -50,7 +39,6 @@ const Login = () => {
               type="password"
               className="form-control"
               placeholder="Enter password"
-              onChange={passwordChangeHandler}
             />
           </div>
           <div className="d-grid">
@@ -58,13 +46,10 @@ const Login = () => {
               Login
             </button>
           </div>
-          <p className="forgot-password text-right">
-            Not registered <a href="/sign-in">Sign Up?</a>
-          </p>
         </form>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default LoginAdmin;

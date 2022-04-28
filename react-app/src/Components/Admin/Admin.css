@@ -1,28 +1,30 @@
-.navbar-brand{
-    display: flex;
+.navbar-brand {
+  display: flex;
 }
-img{
-    width: 4rem;
-    height: 3rem;
-    object-fit: cover;
+.myadmin {
+  box-shadow: 0 20px 20px -20px black;
 }
-.logo{
-    font-weight: bold;
-    margin-left: 0.5rem;
-    font-size: 30px;
+img {
+  width: 4rem;
+  height: 3rem;
+  object-fit: cover;
 }
-.navProfile{
-    font-size: 25px;
-    margin-left: 14rem;
+.logo {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  font-size: 30px;
 }
-.navProfile li{
-    margin-right:10px ;
+.navProfile {
+  font-size: 25px;
+  margin-left: 14rem;
+}
+.navProfile li {
+  margin-right: 10px;
 }
 
-.navProfile li:hover{
-    background-color: antiquewhite;
+.navProfile li:hover {
+  background-color: antiquewhite;
 }
-
 
 /* .logo{
     background-color: antiquewhite;

@@ -18,7 +18,7 @@ const LoginAdmin = () => {
           </Link>
           <h1 className="logintext">Login</h1>
           <Link to="/login">
-            <button className="user">User</button>
+            <button className="btn btn-primary user">User</button>
           </Link>
         </div>
       </div>

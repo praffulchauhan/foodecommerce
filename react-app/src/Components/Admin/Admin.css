@@ -1,6 +1,9 @@
 .navbar-brand {
   display: flex;
 }
+.myadmin {
+  box-shadow: 0 20px 20px -20px black;
+}
 img {
   width: 4rem;
   height: 3rem;

@@ -3,7 +3,7 @@ import "./Admin.css";
 
 const Admin = () => {
   return (
-    <div>
+    <div className="myadmin">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link to="/admin" className="navbar-brand">
           <img

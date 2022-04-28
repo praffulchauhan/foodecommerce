@@ -28,7 +28,7 @@ const Login = () => {
           </Link>
           <h1 className="logintext">Login</h1>
           <Link to="/login/admin">
-            <button className="admin">Admin</button>
+            <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>
       </div>

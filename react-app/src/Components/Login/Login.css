@@ -1,7 +1,7 @@
 .mynav {
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 4px 4px -4px rgba(5, 0, 0, 0.2);
+  box-shadow: 0 20px 20px -20px black;
   margin-top: 1rem;
 }
 .logo {
@@ -13,12 +13,9 @@
 
 .admin {
   margin-left: 28rem;
-  height: 2.5rem;
-  font-size: 20px;
-  border-radius: 1.5rem;
 }
 .admin:hover {
-  background-color: rgb(49, 180, 231);
+  background-color: crimson;
 }
 
 .login {

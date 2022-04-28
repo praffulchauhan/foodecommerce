@@ -8,61 +8,36 @@ import UserService from "../Services/UserService";
 
 const Menu = () => {
 
-const pizza = [
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  },
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  },
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  },
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  }
-]
-
-const burger = [{
-  name : "burger",
-  description : "India loves it!",
-  price : 250,
-  image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-
-}]
-
-const indian={};
-const chinese={};
-const mexican = {}
-
-
 
 var [datax,setDatax] = useState([]);
+const [loading, setLoading] = useState(true);
+
+var [full_menu,setFullmenu] = useState([]);
+var response=[];
 
 useEffect(() => {
- 
-  UserService.get_product()
-  .then((res)=>{
-    if (res.data !== ''){
-      console.log(res.data)
-      setDatax(res.data) 
+  const fetchData = async () =>{
+    setLoading(true);
+    try {
+      const {data: response} = await UserService.get_product();
+      setDatax(response);
+    } catch (error) {
+      console.error(error.message);
     }
-  })
-  
-},[])
+    setLoading(false);
+  }
 
+  fetchData();
+}, []);
+
+
+console.log(datax);
+
+let pizza = [];
+const burger=[];
+const indian=[];
+const chinese=[];
+const mexican=[];
   return(
     <div className="divyansh">
       <nav className="top_space options navbar navbar-expand navbar-light bg-warning">
@@ -104,6 +79,9 @@ useEffect(() => {
 
 
       <MenuC data={datax}/>
+
+      <Link to='' className='proceed-button btn btn-success'>Proceed to Cart</Link>
+
 
   </div>
 

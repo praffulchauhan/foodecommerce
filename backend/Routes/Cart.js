@@ -23,30 +23,39 @@ res.send("User Deleted!");
   
   router.post('/',auth.required,jsonParser, async (req, res) => {
 
-    const users = new Cart({
-        userId:req.body.userId,
-        name: req.body.name,
-        price: req.body.price,
-        quantity: req.body.quantity,
-        description: req.body.description,
-        image: req.body.image,
-        catagory: req.body.catagory
-      })
+var bodi = req.body;
+var result_real = [];
+
+for(let i=0;i<bodi.length;i++){
+  const users = new Cart({
+    userId:bodi[i].userId,
+    name: bodi[i].name,
+    price: bodi[i].price,
+    quantity: bodi[i].quantity,
+    description: bodi[i].description,
+    image: bodi[i].image,
+    catagory: bodi[i].catagory
+  })
 
 
-      const users2 = {
-        userId:req.body.userId,
-        name: req.body.name,
-        price: req.body.price,
-        quantity: req.body.quantity,
-        description: req.body.description,
-        image: req.body.image,
-        catagory: req.body.catagory
-      }
-  
-    const insert_x = new UserserviceCart();
-    const result = await insert_x.to_insert(users,users2)
-    res.send(result);
+  const users2 = {    
+    userId:bodi[i].userId,
+    name: bodi[i].name,
+    price: bodi[i].price,
+    quantity: bodi[i].quantity,
+    description: bodi[i].description,
+    image: bodi[i].image,
+    catagory: bodi[i].catagory
+  }
+
+const insert_x = new UserserviceCart();
+const result = await insert_x.to_insert(users,users2)
+result_real.push(result);
+
+}
+
+
+    res.send(result_real);
    
  
   })

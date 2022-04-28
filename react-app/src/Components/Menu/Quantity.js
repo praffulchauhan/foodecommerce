@@ -25,7 +25,7 @@ function IncDecCounter(){
     
     <div className="input-group">
   
-  <div className="input-group-prepend">
+  <div className="quant input-group-prepend">
       <p className="all"><b>Quantity</b></p>
     <button className="btn btn-outline-primary margin-l" type="button" onClick={decNum}>-</button>
   </div>

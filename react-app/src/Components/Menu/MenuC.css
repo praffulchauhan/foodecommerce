@@ -1,31 +1,42 @@
-.xyz{
+/* .xyz{
 padding-left:50%;
 padding-top:15%;
+} */
+
+.menu-body{
+    width:80%;
+    margin-left: 3rem;
 }
 
-.lmn{
-    width:70%;
-    margin-left: 200px;
-}
-
-.flex-container {
-    display: flex;
+/* .flex-container {
+        display: flex;
    
-  }
+  } */
 
-  .pqr{
+  .menus{
       margin-top: 40px;
   }
 
+  .menu-body{
+      height: 28rem;
+      margin-bottom: 3rem;
+  }
+.menu-body img{
+    height: 15rem;
+    object-fit: cover;
 
+}
   .dll{
       display: flex;
-      padding-left: 25px;
-      
   }
-
-
-  .flm{
-      margin-left: 200px;
+.dll p{
+    /* margin-right:20px */
+    width: 100%;
+}
+  .cart{
+      margin-left: 5rem;
       border-radius: 12px;
   }
+.button{
+    margin-top: 20px;
+}

@@ -2,9 +2,9 @@ var Cart = require('../Models/cart.js');
 
 class cart{
 
-async to_fetch(userId2){
+async to_fetch(){
   try {
-    const menu_data = await Cart.find({userId:userId2})
+    const menu_data = await Cart.find()
     console.log(menu_data);
     return (menu_data)
   } catch (err) {

@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/menu", require("./Routes/menu.js"));
+app.use("/cart", require("./Routes/Cart.js"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -1,17 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import axios from "axios"
 
 const Login = () => {
+  const [formErros,setFormErrors] = useState(false)
+  const headers = {
+    "Content-Type": 'application/json'
+  }
+  let email=""
   const emailChangeHandler = (event) => {
-    console.log(event.target.value);
+    email = event.target.value;
   };
+  let password = ""
   const passwordChangeHandler = (e) => {
-    console.log(e.target.value);
+    password = e.target.value;
   };
   const loginHandler = (event) => {
     event.preventDefault();
+    axios.post('http://localhost:3000/user/login', {
+      "email":email,
+      "password":password
+    },headers)
+    .then(function (response) {
+      if(response.data===false){
+      setFormErrors(true)}
+      else{
+        setFormErrors(false)
+      }
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   };
+  const setFormErrorButtonInvisible = () => {
+    setFormErrors(false)
+  }
 
   return (
     <div>
@@ -62,6 +87,7 @@ const Login = () => {
             Not registered <a href="/sign-in">Sign Up?</a>
           </p>
         </form>
+        {formErros && <button type="button" onClick={setFormErrorButtonInvisible} class="btn btn-danger">Invalid Credentials</button>}
       </div>
     </div>
   );

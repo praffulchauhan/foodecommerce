@@ -13,7 +13,7 @@ const Cart = () => {
     }
     
   ]
-
+  
   const [cartItems,setCartItems] = useState(cartItem)
    const handleCartClearButton = () => {
      setCartItems([])

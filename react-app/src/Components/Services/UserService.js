@@ -12,9 +12,19 @@ class UserService {
         return axios.post(BASE_URL + '/menu', data, headers)
     }
 
+    add_product2(data){
+        return axios.post(BASE_URL + '/cart', data, headers)
+    }
+
+
     get_product(){
         return axios.get(BASE_URL + '/menu', headers)
     }
+    get_product2(){
+        return axios.get(BASE_URL + '/cart', headers)
+    }
+
+
 
     find_product(id){
         return axios.get(BASE_URL + '/menu/find/'+ id, headers)
@@ -27,6 +37,7 @@ class UserService {
     delete_product(id){
         return axios.post(BASE_URL + '/menu/'+ id, headers)
     }
+
 
 }
 

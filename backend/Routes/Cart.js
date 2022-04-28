@@ -5,10 +5,9 @@ const Cart = require('../Models/cart')
 const bodyParser=require("body-parser");
 var jsonParser = bodyParser.json()
 
-router.get('/:userId',jsonParser, async (req, res) => {
+router.get('/',jsonParser, async (req, res) => {
     const data = new UserserviceCart();
-    console.log(req.params.userId);
- const result = await data.to_fetch(req.params.userId);
+ const result = await data.to_fetch();
   res.send(result);
   })
 
@@ -46,6 +45,8 @@ for(let i=0;i<bodi.length;i++){
     image: bodi[i].image,
     catagory: bodi[i].catagory
   }
+
+
 
 const insert_x = new UserserviceCart();
 const result = await insert_x.to_insert(users,users2)

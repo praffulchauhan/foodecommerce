@@ -32,7 +32,7 @@ for(let i=0;i<bodi.length;i++){
     quantity: bodi[i].quantity,
     description: bodi[i].description,
     image: bodi[i].image,
-    catagory: bodi[i].catagory
+    category: bodi[i].category
   })
 
 
@@ -43,7 +43,7 @@ for(let i=0;i<bodi.length;i++){
     quantity: bodi[i].quantity,
     description: bodi[i].description,
     image: bodi[i].image,
-    catagory: bodi[i].catagory
+    category: bodi[i].category
   }
 
 

@@ -36,7 +36,7 @@ useEffect(() => {
 
 function filt_p(){
   pizza = resp.filter(function (e) {
-    return e.catagory == "Pizza";
+    return e.category == "Pizza";
   });
 
   setDatax(pizza)
@@ -47,7 +47,7 @@ function filt_p(){
 var burger=[];
 function filt_b(){
   burger = resp.filter(function (e) {
-    return e.catagory == "Burger";
+    return e.category == "Burger";
   });
 
   setDatax(burger)
@@ -55,7 +55,7 @@ function filt_b(){
 var indian=[];
 function filt_i(){
   indian = resp.filter(function (e) {
-    return e.catagory == "Indian";
+    return e.category == "Indian";
   });
 
   setDatax(indian)
@@ -63,7 +63,7 @@ function filt_i(){
 var chinese=[];
 function filt_c(){
   chinese = resp.filter(function (e) {
-    return e.catagory == "Chinese";
+    return e.category == "Chinese";
   });
 
   setDatax(chinese)
@@ -73,7 +73,7 @@ function filt_c(){
 var mexican=[];
 function filt_m(){
   mexican = resp.filter(function (e) {
-    return e.catagory == "Mexican";
+    return e.category == "Mexican";
   });
 
   setDatax(mexican)

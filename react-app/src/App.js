@@ -7,7 +7,6 @@ import ListProduct from './Components/Admin/ListProduct';
 import Signup from './Components/Signup/Signup';
 import Menu from './Components/Menu/Menu';
 import Cart from './Components/Cart/Cart';
-import Menu from './Components/Menu/Menu';
 
 function App() {
     return (

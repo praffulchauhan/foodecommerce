@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 function MenuC(props) {
   const [Menu, setMenu] = useState([]);
+
   const addCartHandler = useCallback(
     (index) => {
       if (!Menu.find(({id}) => id === index)) {

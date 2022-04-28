@@ -5,7 +5,10 @@ const {Schema} = mongoose;
 const foodSchema = new Schema({
     name: String,
     price: Number,
-    quantity:Number,
+    quantity:{
+        type: Number,
+        default:1
+    },
     description: String,
     image:String ,
     isDel: {

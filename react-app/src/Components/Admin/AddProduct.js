@@ -47,7 +47,7 @@ const AddProduct = () => {
                 setItem(true)
                 console.log(msg)
             }
-            else if(res.data.message=='User already exists'){
+            else if(res.data.message==='User already exists'){
                 setMsg('Product Already Exists!!')
                 setItem(true)
             }
@@ -95,8 +95,8 @@ const AddProduct = () => {
                 <button type="submit" className="addpro btn btn-danger mb-2" >Add product</button>
             </div>
             </form>
-        </div>
-    );
-}
+  </div>
+  );
+};
 
 export default AddProduct;

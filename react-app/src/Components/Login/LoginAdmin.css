@@ -1,0 +1,33 @@
+.mynav {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 20px 20px -20px black;
+  margin-top: 1rem;
+}
+.logo {
+  margin-left: 1rem;
+}
+.logintext {
+  margin-left: 33rem;
+}
+
+.user {
+  margin-left: 28rem;
+}
+.user:hover {
+  background-color: crimson;
+}
+.login {
+  justify-content: center;
+  width: 400px;
+  background: rgb(49, 180, 231);
+  border: 1px solid #dddfe2;
+  box-shadow: 0 2px 4px rgb(0 0 0/10%), 0 8px 16px rgb(0 0 0/10%);
+  border-radius: 8px;
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+  margin-top: 10rem;
+  margin-left: 30rem;
+}

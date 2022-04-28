@@ -1,12 +1,11 @@
 import React from "react";
-import "./Signup.css"
-import {Link} from "react-router-dom";
+import "./Signup.css";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
-    
-      <div className="signup">
-        <form>
+    <div className="signup">
+      <form>
         <h3>Sign Up</h3>
         <div className="mb-3">
           <label>First name</label>
@@ -45,9 +44,8 @@ const Signup = () => {
           Already registered <Link to="/sign-in">sign in?</Link>
         </p>
       </form>
-      </div>
-      
-    );
+    </div>
+  );
 };
 
 export default Signup;

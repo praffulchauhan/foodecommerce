@@ -1,9 +1,20 @@
-.list{
-    margin-top: 2rem;
-    width: 50%;
-    margin-left: 20rem;
+.list {
+  margin-top: 2rem;
+  width: 50%;
+  margin-left: 20rem;
+  display: flex;
 }
 
-.action{
-    text-align: center;
+.action {
+  text-align: center;
+}
+
+.card-img-top {
+  width: 30%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.cont {
+  margin-top: 4rem;
 }

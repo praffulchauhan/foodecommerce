@@ -8,25 +8,35 @@ import UserService from "../Services/UserService";
 
 const Menu = () => {
 
-  const indian={};
-  const chinese={};
-  const mexican = {}
+var [datax,setDatax] = useState([]);
+const [loading, setLoading] = useState(true);
+
+var [full_menu,setFullmenu] = useState([]);
+var response=[];
+
+useEffect(() => {
+  const fetchData = async () =>{
+    setLoading(true);
+    try {
+      const {data: response} = await UserService.get_product();
+      setDatax(response);
+    } catch (error) {
+      console.error(error.message);
+    }
+    setLoading(false);
+  }
+
+  fetchData();
+}, []);
 
 
-  var [datax,setDatax] = useState([]);
+console.log(datax);
 
-  useEffect(() => {
-  
-    UserService.get_product()
-    .then((res)=>{
-      if (res.data !== ''){
-        console.log(res.data)
-        setDatax(res.data) 
-      }
-    })
-    
-  },[])
-
+let pizza = [];
+const burger=[];
+const indian=[];
+const chinese=[];
+const mexican=[];
   return(
     <div className="divyansh">
       <nav className="top_space options navbar navbar-expand navbar-light bg-warning">
@@ -68,6 +78,9 @@ const Menu = () => {
 
 
       <MenuC data={datax}/>
+
+      <Link to='' className='proceed-button btn btn-success'>Proceed to Cart</Link>
+
 
   </div>
 

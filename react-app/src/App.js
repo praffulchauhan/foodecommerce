@@ -8,12 +8,14 @@ import Signup from "./Components/Signup/Signup";
 import Menu from "./Components/Menu/Menu";
 import Cart from "./Components/Cart/Cart";
 import EditProduct from "./Components/Admin/EditProduct";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/signup" element={<Signup />} />

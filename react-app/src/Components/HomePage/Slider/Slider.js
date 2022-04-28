@@ -1,4 +1,5 @@
 import './Slider.css';
+import {Link} from "react-router-dom";
 
 const Slider = () => {
     return(
@@ -20,14 +21,14 @@ const Slider = () => {
             <img className="d-block w-100" src="https://media.istockphoto.com/photos/chilli-paneer-indian-snack-food-picture-id1311491582?b=1&k=20&m=1311491582&s=170667a&w=0&h=TsMv3jRUnX1WQR7xhiouu3AOUYAmgt_fEuch_U3d_wc=" alt="Third slide" />
             </div>
         </div>
-        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <Link className="carousel-control-prev" to="#carouselExampleIndicators" role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        </Link>
+        <Link className="carousel-control-next" to="#carouselExampleIndicators" role="button" data-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
-        </a>
+        </Link>
 </div>
 </div>
         

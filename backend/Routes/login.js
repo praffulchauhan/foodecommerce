@@ -20,8 +20,12 @@ router.post("/signup",jsonParser,async (req,res)=>{
 router.post("/login",jsonParser,async (req,res)=>{
     const userService = new UserService();
     const result = await userService.loginUser(req.body.email,req.body.password);
-
-    res.send(result); 
+    if(result===false){
+        res.send(false)
+    }
+    else{
+    res.send(result);
+    } 
 })
 
 router.delete(":/id",async (req,res)=>{

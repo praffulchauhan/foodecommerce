@@ -1,11 +1,26 @@
 import React from "react";
+
 import "./Signup.css"
 import axios from "axios"
+import { Link } from "react-router-dom";
+
 
 const Signup = () => {
-  let name = ""
-  const nameHandler = (event) => {
-    name = event.target.value
+  let firstname = ""
+  let lastname=""
+  let email=""
+  let password=""
+  const firstnameHandler = (event) => {
+    firstname = event.target.value
+  }
+  const lastnameHandler = (event) => {
+    lastname = event.target.value
+  }
+  const emailHandler = (event) => {
+    email = event.target.value
+  }
+  const passwordHandler = (event) => {
+    password = event.target.value
   }
   const headers = {
     "Content-Type": 'application/json'
@@ -13,10 +28,10 @@ const Signup = () => {
   const submitHandler = (e) => {
     e.preventDefault()
     axios.post('http://localhost:3000/user/signup', {
-      "firstname": 'FRiD',
-      "lastname": 'Flintstone',
-      "email":"fi@gmail.com",
-      "password":"123",
+      "firstname": firstname,
+      "lastname": lastname,
+      "email":email,
+      "password":password,
     },headers)
     .then(function (response) {
       console.log(response);
@@ -37,12 +52,12 @@ const Signup = () => {
             type="text"
             className="form-control"
             placeholder="First name"
-            onChange={nameHandler}
+            onChange={firstnameHandler}
           />
         </div>
         <div className="mb-3">
           <label>Last name</label>
-          <input type="text" className="form-control" placeholder="Last name" />
+          <input type="text" className="form-control" placeholder="Last name" onChange={lastnameHandler}/>
         </div>
         <div className="mb-3">
           <label>Email address</label>
@@ -50,6 +65,7 @@ const Signup = () => {
             type="email"
             className="form-control"
             placeholder="Enter email"
+            onChange={emailHandler}
           />
         </div>
         <div className="mb-3">
@@ -58,6 +74,7 @@ const Signup = () => {
             type="password"
             className="form-control"
             placeholder="Enter password"
+            onChange={passwordHandler}
           />
         </div>
         <div className="d-grid">
@@ -66,7 +83,7 @@ const Signup = () => {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
+          Already registered <Link to="/sign-in">sign in?</Link>
         </p>
       </form>
       </div>

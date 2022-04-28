@@ -1,12 +1,12 @@
 .top_space{
-    margin-top: 140px;
+    margin-top: 40px;
 }
 
-.nevbar{
-    max-width: 50%;
-    margin-left: 23%;
+.options{
+    max-width: 70%;
+    margin-left: 15%;
     border-radius: 30px;
-
+    margin-bottom: 2rem;
 }
 
 .xyz{

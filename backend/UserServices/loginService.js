@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 const { redirect } = require("express/lib/response");
 const mongoose =  require("mongoose")
 const UserSchema = require("../Models/User");
@@ -27,29 +28,28 @@ class UserService{
     }
 
     async loginUser(email,password){
+        
         const result = await User.find({"email":email});
-        if(result){
+        if(result!==[]){
             if(result.length>0)
             {
                 const user = result[0];
                 if(user.password===password){
                     user["hash"]="";
                     user["salt"]="";
-
                     const objUser = user.toObject();
                     objUser.token = user.generateToken();
                     return objUser;
+                }
             }
             else{
-                return {"Email":"","password":"Password not matched"};
+                return false
             }
         }
-
-    }
-    else{
-        return {"Email":"Email-not Found","password":""}
-
-    }
+        else{
+            return false
+        }
+        
 }
 }
 

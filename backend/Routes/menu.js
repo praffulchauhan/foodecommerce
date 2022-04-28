@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         quantity: req.body.quantity,
         description: req.body.description,
         image: req.body.image,
-        catagory: req.body.catagory
+        category: req.body.category
       })
 
 
@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
         quantity: req.body.quantity,
         description: req.body.description,
         image: req.body.image,
-        catagory: req.body.catagory
+        category: req.body.category
       }
   
     const insert_x = new Userservice();

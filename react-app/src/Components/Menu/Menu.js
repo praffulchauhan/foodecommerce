@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Menu.css'
 import MenuC from "./MenuC";
 import { useState } from "react";
+import {Link} from "react-router-dom";
 
 const Menu = () => {
 
@@ -53,45 +54,47 @@ var [datax,setDatax] = useState(pizza);
 
   return(
     <div className="divyansh">
-<nav className="top_space nevbar navbar navbar-expand-lg navbar-light bg-warning">
-  <div className="container-fluid">
- 
-    <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <div className="left_space">
-        <li className="nav-item">
-          <a className="nav-link" aria-current="page" onClick={()=>setDatax(pizza)}  href="#">Pizzas</a>
-        </li>
+      <nav className="top_space options navbar navbar-expand navbar-light bg-warning">
+        <div className="container-fluid">
+      
+          <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <div className="left_space">
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" onClick={()=>setDatax(pizza)}  to='' >Pizzas</Link>
+              </li>
+              </div>
+            <div  className="left_space"> 
+              <li className="nav-item">
+                <Link className="nav-link" to=''  onClick={()=>setDatax(burger)}>Burgers</Link>
+                </li>
+              </div>
+              <div  className="left_space">
+                <li className="nav-item"> 
+                <Link className="nav-link" to=''  onClick={()=>setDatax(indian)} >Indian</Link>
+                </li>
+              </div>
+              <div  className="left_space">
+                <li className="nav-item"> 
+                <Link className="nav-link" to=''  onClick={()=>setDatax(chinese)}>Chinese</Link>
+                </li>
+              </div>
+              <div  className="left_space">
+                <li className="nav-item"> 
+                <Link className="nav-link" to=''  onClick={()=>setDatax(mexican)}>Mexican</Link>
+              </li>
+              </div>
+          
+            </ul>
+          
+          </div>
         </div>
-       <div  className="left_space"> <li className="nav-item">
-        <a className="nav-link" href="#" onClick={()=>setDatax(burger)}>Burgers</a>
-        </li></div>
-        <div  className="left_space"><li className="nav-item"> 
-          <a className="nav-link" href="#" onClick={()=>setDatax(indian)} >Indian</a>
-        </li></div>
-        <div  className="left_space"><li className="nav-item"> 
-          <a className="nav-link" href="#" onClick={()=>setDatax(chinese)}>Chinese</a>
-        </li></div>
-        <div  className="left_space"><li className="nav-item"> 
-          <a className="nav-link" href="#" onClick={()=>setDatax(mexican)}>Mexican</a>
-        </li></div>
-     
-      </ul>
-     
-    </div>
+      </nav>
+
+
+      <MenuC data={datax}/>
+
   </div>
-</nav>
-
-
-<MenuC data={datax}/>
-
-
-
-</div>
-
-
-
-
 
 )
 };

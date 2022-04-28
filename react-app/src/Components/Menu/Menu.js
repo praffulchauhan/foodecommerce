@@ -8,7 +8,6 @@ import UserService from "../Services/UserService";
 
 const Menu = () => {
 
-
 var [datax,setDatax] = useState([]);
 const [loading, setLoading] = useState(true);
 var [resp,setResp] = useState([]);
@@ -20,6 +19,7 @@ useEffect(() => {
     setLoading(true);
     try {
       const {data: response} = await UserService.get_product();
+      console.log(response)
       setDatax(response);
       setResp(response);
     } catch (error) {
@@ -67,8 +67,10 @@ function filt_c(){
 
   setDatax(chinese)
 }
+
+
 var mexican=[];
-function filt_i(){
+function filt_m(){
   mexican = resp.filter(function (e) {
     return e.catagory == "Mexican";
   });
@@ -94,7 +96,7 @@ console.log(x)
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <div className="left_space">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" onClick={filt_p}  to='' >Pizzas</Link>
+   <Link className="nav-link" aria-current="page" onClick={filt_p}  to='' >Pizzas</Link>
               </li>
               </div>
             <div  className="left_space"> 
@@ -104,17 +106,17 @@ console.log(x)
               </div>
               <div  className="left_space">
                 <li className="nav-item"> 
-                <Link className="nav-link" to=''  onClick={()=>setDatax(indian)} >Indian</Link>
+                <Link className="nav-link" to=''  onClick={filt_i} >Indian</Link>
                 </li>
               </div>
               <div  className="left_space">
                 <li className="nav-item"> 
-                <Link className="nav-link" to=''  onClick={()=>setDatax(chinese)}>Chinese</Link>
+                <Link className="nav-link" to=''  onClick={filt_c}>Chinese</Link>
                 </li>
               </div>
               <div  className="left_space">
                 <li className="nav-item"> 
-                <Link className="nav-link" to=''  onClick={()=>setDatax(mexican)}>Mexican</Link>
+                <Link className="nav-link" to=''  onClick={filt_m}>Mexican</Link>
               </li>
               </div>
           

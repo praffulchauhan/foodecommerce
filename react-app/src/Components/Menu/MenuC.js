@@ -42,7 +42,7 @@ console.log(Menu);
         {
           props.data.map( (user,index) => (
 
-          <div className='col-md-4 menus' key={index}>
+          <div className='col-md-4 menus' key={user._id}>
             <div className="card menu-body " >
               <img src={user.image} className="card-img-top" alt="menu"/>
               <div className="card-body" >

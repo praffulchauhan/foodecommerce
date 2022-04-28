@@ -1,71 +1,73 @@
+import { useEffect, useState } from "react";
+import UserService from "../Services/UserService";
 import Admin from "./Admin";
 import "./ListProduct.css";
+import {Link} from "react-router-dom";
 
-const items = [
-  {
-    name: "Pizza",
-    description: "lorum ipsum",
-    price: "sdb",
-    image: "sd",
-  },
-];
 const ListProduct = () => {
+    const [data,setData] = useState([]);
+    const [item,setItem] = useState(false);
+
+    function getProduct(){
+        UserService.get_product()
+        .then((res)=>{
+          if (res.data !== ''){
+            console.log(res.data)
+            setData(res.data) 
+          }
+        })
+    }
+    useEffect(() => {
+ 
+        getProduct();
+        
+      },[])
+    
+      function deleteHandler(id){
+        //   event.prevenDefault()
+          console.log(id)
+          UserService.delete_product(id)
+          .then((res)=>{
+              if(res.data!==''){
+                  console.log(res.data)
+                  setItem(true)
+              }
+          })
+          getProduct();
+      }
   return (
     <div>
       <Admin />
-      <div class="container cont">
-        <div class="row">
-          <div class="col-sm">
-            {" "}
-            <div class="card">
-              <img
-                class="card-img-top"
-                src="https://www.istockphoto.com/photo/cheeseburger-with-tomato-and-lettuce-on-wooden-board-gm1309352410-399098986?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fburger&utm_term=burger%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Burger</h5>
-                <p class="card-text">100</p>
-                <p class="card-text">This is Burger</p>
-                <button className="btn btn-primary ml-3">Edit</button>
-                <button className="btn btn-primary ml-5">Delete</button>
-              </div>
+      {(item)? 
+            
+            <div className="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Product Deleted</strong> 
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-          </div>
-          <div class="col-sm">
-            {" "}
-            <div class="card">
-              <img
-                class="card-img-top"
-                src="https://www.istockphoto.com/photo/cheeseburger-with-tomato-and-lettuce-on-wooden-board-gm1309352410-399098986?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fburger&utm_term=burger%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Burger</h5>
-                <p class="card-text">100</p>
-                <p class="card-text">This is Burger</p>
-                <button className="btn btn-primary ml-3">Edit</button>
-                <button className="btn btn-primary ml-5">Delete</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm">
-            {" "}
-            <div class="card">
-              <img
-                class="card-img-top"
-                src="https://www.istockphoto.com/photo/cheeseburger-with-tomato-and-lettuce-on-wooden-board-gm1309352410-399098986?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fburger&utm_term=burger%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title">Burger</h5>
-                <p class="card-text">100</p>
-                <p class="card-text">This is Burger</p>
-                <button className="btn btn-primary ml-3">Edit</button>
-                <button className="btn btn-primary ml-5">Delete</button>
-              </div>
-            </div>
-          </div>
+            :""}
+      <div className="container cont">
+        <div className="row">
+            {data.map((item)=>(
+                <div className="product col-md-4" key={item._id}>
+
+                    <div className="card">
+                    <img
+                        className="card-img-top"
+                        src={item.image}
+                        alt=""
+                        />
+                        <div className="card-body">
+                            <h5 className="card-title">{item.name}</h5>
+                            <p className="card-text">{item.price}</p>
+                            <p className="card-text">{item.description}</p>
+                            <Link to={`/admin/edit/${item._id}`} className="btn btn-primary ml-3">Edit</Link>
+                            <button onClick={()=>deleteHandler(item._id)} className="btn btn-primary ml-5">Delete</button>
+                        </div>
+                    </div>
+                    </div>
+                ))}
         </div>
       </div>
     </div>

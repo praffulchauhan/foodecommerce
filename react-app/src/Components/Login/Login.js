@@ -18,7 +18,7 @@ const Login = () => {
   };
   const loginHandler = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/user/login', {
+    axios.post('http://localhost:5000/user/login', {
       "email":email,
       "password":password
     },headers)
@@ -42,7 +42,7 @@ const Login = () => {
     <div>
       <div className="mynav">
         <div className="logo">
-          <Link to="/login" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img
               src="https://cdn3.vectorstock.com/i/thumb-large/10/77/food-fox-logo-vector-24171077.jpg"
               width="30"
@@ -52,7 +52,7 @@ const Login = () => {
             />
           </Link>
           <h1 className="logintext">Login</h1>
-          <Link to="/login/admin">
+          <Link to="/admin/add">
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>
@@ -84,7 +84,7 @@ const Login = () => {
             </button>
           </div>
           <p className="forgot-password text-right">
-            Not registered <a href="/sign-in">Sign Up?</a>
+            Not registered <a href="/signup">Sign Up?</a>
           </p>
         </form>
         {formErros && <button type="button" onClick={setFormErrorButtonInvisible} class="btn btn-danger">Invalid Credentials</button>}

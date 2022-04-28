@@ -4,7 +4,7 @@ class food{
 
 async to_fetch(){
   try {
-    const menu_data = await Food.find()
+    const menu_data = await Food.find({isDel: false})
     return (menu_data)
   } catch (err) {
     return json({ message: err.message })
@@ -52,6 +52,9 @@ async updateUser(_id,users){
 
 }
 
+async getOneUser(_id){
+  return await Food.findOne({"_id":_id})
+}
 
 }
 

@@ -1,5 +1,7 @@
 import React from "react";
 import "./Signup.css"
+import {Link} from "react-router-dom";
+
 const Signup = () => {
   return (
     
@@ -40,7 +42,7 @@ const Signup = () => {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
+          Already registered <Link to="/sign-in">sign in?</Link>
         </p>
       </form>
       </div>

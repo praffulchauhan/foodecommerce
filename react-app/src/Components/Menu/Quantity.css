@@ -7,27 +7,29 @@
 }
 
 input[type=text] {
-    width: 20%;
-    height: 50%;
-    box-sizing: border-box;
+    /* width: 20%;
+    height: 70%;
+    box-sizing: border-box; */
   }
 
 .float-x{
 
     float:left;
-    width:50%;
+    width:10%;
 
 }
-.all{
-    margin-left: 30px;
-}
-
 .margin-l{
-    margin-left: 150px;
-    margin-top:-70px;
+    /* margin-left: 10px; */
+    /* margin-top:-70px; */
+    height: 2.4rem;
 
 }
 
 .margin-r{
-    margin-right: 200px;
+    height: 2.4rem;
+    margin-right: 10px;
+}
+
+.quant{
+    margin-left: -20px;
 }

@@ -1,12 +1,14 @@
-var Food = require('../Models/food.js');
+var Cart = require('../Models/cart.js');
 
-class food{
+class cart{
 
-async to_fetch(){
+async to_fetch(userId2){
   try {
-    const menu_data = await Food.find()
+    const menu_data = await Cart.find({userId:userId2})
+    console.log(menu_data);
     return (menu_data)
   } catch (err) {
+    console.log(err);
     return json({ message: err.message })
   }
 }
@@ -14,7 +16,7 @@ async to_fetch(){
 async to_insert(users,users2){
 
     try {
-        const name2 = await Food.findOne({name : users2.name});
+        const name2 = await Cart.findOne({name : users2.name});
 
         
         if(name2==null)
@@ -42,8 +44,7 @@ async removeUser(_id){
 async updateUser(_id,users){
 
     return await Food.updateOne({"_id":_id}, {$set:{ 
-      userId:users.id,
-      name:users.name
+        name:users.name
         ,description:users.description
         ,image:users.image
         ,price:users.price,
@@ -55,4 +56,4 @@ async updateUser(_id,users){
 
 }
 
-module.exports = food;
+module.exports = cart;

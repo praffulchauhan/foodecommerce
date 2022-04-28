@@ -61,6 +61,12 @@ res.send(result);
     
     
       })
+    
+    router.get('/find/:id', async (req,res)=>{
+      const data = new Userservice();
+      const result = await data.getOneUser(req.params.id);
+      res.send(result);
+    })
 
 
 

@@ -8,60 +8,24 @@ import UserService from "../Services/UserService";
 
 const Menu = () => {
 
-const pizza = [
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  },
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  },
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  },
-  {
-    name : "Peppy Paneer",
-    description : "India loves it!",
-    price : 250,
-    image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-  }
-]
-
-const burger = [{
-  name : "burger",
-  description : "India loves it!",
-  price : 250,
-  image : "https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg"
-
-}]
-
-const indian={};
-const chinese={};
-const mexican = {}
+  const indian={};
+  const chinese={};
+  const mexican = {}
 
 
+  var [datax,setDatax] = useState([]);
 
-var [datax,setDatax] = useState([]);
-
-useEffect(() => {
- 
-  UserService.get_product()
-  .then((res)=>{
-    if (res.data !== ''){
-      console.log(res.data)
-      setDatax(res.data) 
-    }
-  })
+  useEffect(() => {
   
-},[])
+    UserService.get_product()
+    .then((res)=>{
+      if (res.data !== ''){
+        console.log(res.data)
+        setDatax(res.data) 
+      }
+    })
+    
+  },[])
 
   return(
     <div className="divyansh">
@@ -72,12 +36,12 @@ useEffect(() => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <div className="left_space">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" onClick={()=>setDatax(pizza)}  to='' >Pizzas</Link>
+                <Link className="nav-link" aria-current="page" onClick={()=>setDatax()}  to='' >Pizzas</Link>
               </li>
               </div>
             <div  className="left_space"> 
               <li className="nav-item">
-                <Link className="nav-link" to=''  onClick={()=>setDatax(burger)}>Burgers</Link>
+                <Link className="nav-link" to=''  onClick={()=>setDatax()}>Burgers</Link>
                 </li>
               </div>
               <div  className="left_space">

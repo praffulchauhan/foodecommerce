@@ -55,14 +55,15 @@ const Login = () => {
             />
           </Link>
           <h1 className="logintext">{name}</h1>
-          <Link to="/admin/add">
+          <h3>Login User</h3>
+          <Link to="/admin">
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>
       </div>
       <div className="login">
         <form onSubmit={loginHandler}>
-          <h3>Login</h3>
+          <h3>Login User</h3>
           <div className="mb-3">
             <label>Email address</label>
             <input

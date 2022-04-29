@@ -6,40 +6,29 @@ import {Link} from "react-router-dom";
 import UserService from '../Services/UserService';
 
 
+
 function MenuC(props) {
   const [Menu, setMenu] = useState([]);
-  const loggedId = localStorage.getItem('LoggedId');
+  const loggedIn = localStorage.getItem('LoggedIn');
 
   const addCartHandler = useCallback(
     (index) => {
-      if (loggedId){
 
-        UserService.find_user(loggedId)
-        .then((res)=>{
-        if(res.data[0]._id !==''){
-            if (!Menu.find(({_id}) => _id === index._id)) {
-              setMenu((data) => [
-                ...data , index
-              ])
-              
-            }
-            else{
-              alert("Already Added")
-            }
-       }
-          
-      })
-    }
-    else{
-      if (window.confirm(`Not Logged In, Please login first before adding items to Cart!! 
-                          Press OK to Login`))
-      {
-      window.open('/login', '_self');
-      };
-
-    }
+      
       console.log(Menu)
-    
+      // if(loggedIn){
+
+      // }
+      if (!Menu.find(({id}) => id === index._id)) {
+      
+        setMenu((data) => [
+          ...data , index
+        ])
+  
+      }
+      else{
+        alert("Already Added")
+      }
     },[Menu]
   )
  function final_func(event){
@@ -55,7 +44,6 @@ console.log(Menu);
  }
   
   return (
-    <div>
     <div className='container-fluid'>
       <div className="row">
         {
@@ -89,7 +77,6 @@ console.log(Menu);
 
 </div>
 
-  </div>
     )
 }
 

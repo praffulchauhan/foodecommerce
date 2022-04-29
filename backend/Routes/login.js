@@ -4,6 +4,7 @@ const UserService = require("../UserServices/loginService")
 const bodyParser=require("body-parser");
 var jsonParser = bodyParser.json()
 
+
 router.get("/",async (req,res)=>{
     const userService = new UserService();
     const result = await userService.getUser();

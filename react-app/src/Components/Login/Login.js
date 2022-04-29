@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import "./Login.css";
 import UserService from "../Services/UserService";
 
+
 const Login = () => {
-  const [formErros,setFormErrors] = useState(false);
-
-  const navigate = useNavigate();
-
+  const navigate = useNavigate()
+  const [formErros,setFormErrors] = useState(false)
   let email=""
   const emailChangeHandler = (event) => {
     email = event.target.value;
@@ -23,7 +22,8 @@ const Login = () => {
     UserService.login_user({
       "email":email,
       "password":password
-    }).then(function (response) {
+    })
+    .then(function (response) {
       if(response.data===false){
       setFormErrors(true)}
       else{
@@ -42,6 +42,7 @@ const Login = () => {
     setFormErrors(false)
   }
 
+  const name = localStorage.getItem("LoggedName")
   return (
     <div>
       <div className="mynav">
@@ -55,8 +56,9 @@ const Login = () => {
               alt=""
             />
           </Link>
-          <h2 className="logintext">User Login</h2>
+  <h2 className="logintext">User Login</h2>
           <Link to="/admin">
+          
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>

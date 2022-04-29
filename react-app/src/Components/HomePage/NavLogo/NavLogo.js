@@ -9,7 +9,7 @@ function NavLogo() {
     localStorage.clear();
     window.location.href = "/login";
   }
-
+  const name = localStorage.getItem("LoggedName")
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container-fluid">
@@ -45,32 +45,37 @@ function NavLogo() {
                 <span style={{ color: "white", fontSize: 25 }}>Menu</span>
               </Link>
             </li>
-            <li className="nav-item">
+            {name!==null?<li className="nav-item">
               <Link className="nav-link" to="/cart">
                 <span style={{ color: "white", fontSize: 25 }}>Cart</span>
               </Link>
-            </li>
-            <div>
+            </li>:null}
+            {name!==null?<div>
+              <li className=" margin2 nav-item inlogName">
+                  <span className="loginName">{name}</span>
+              </li>
+            </div>:<div>
               <li className=" margin2 nav-item">
                 <Link className="nav-link" to="/login">
                   <span style={{ color: "white", fontSize: 25 }}>Login</span>
                 </Link>
               </li>
-            </div>
-            <div>
-              <li className="nav-item">
-                <Link className="nav-link" to="/signup">
-                  <span style={{ color: "white", fontSize: 25 }}>Sign Up</span>
-                </Link>
-              </li>
-            </div>
-            <div>
+            </div>}
+            {name!==null?<div>
               <li className="nav-item">
                 <Link className="nav-link" to="/login" onClick={logout}>
                   <span style={{ color: "red", fontSize: 25 }}>Logout</span>
                 </Link>
               </li>
-            </div>
+            </div>: <div>
+              <li className="nav-item">
+                <Link className="nav-link" to="/signup">
+                  <span style={{ color: "white", fontSize: 25 }}>Sign Up</span>
+                </Link>
+              </li>
+            </div>}
+           
+            
           </ul>
         </div>
       </div>

@@ -15,7 +15,7 @@ router.get('/',jsonParser, async (req, res) => {
 router.post('/:userId',jsonParser,async (req,res)=>{
 
     const data=Cart.find({ userId:req.params.userId }).remove().exec();
-res.send("User Deleted!");
+    res.send("User Deleted!");
 
 })
 

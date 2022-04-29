@@ -4,7 +4,9 @@ const UserService = require("../UserServices/loginService")
 const bodyParser=require("body-parser");
 var jsonParser = bodyParser.json()
 
-router.get("/",auth.required,async (req,res)=>{
+
+const auth = require("./auth")
+router.get("/",async (req,res)=>{
     const userService = new UserService();
     const result = await userService.getUser();
     res.send(result);
@@ -34,7 +36,7 @@ router.post("/login",jsonParser,async (req,res)=>{
     } 
 })
 
-router.delete(":/id",auth.required,async (req,res)=>{
+router.delete(":/id",async (req,res)=>{
     const userService = new UserService();
     const result = await userService.removeUser(req.params.id)
     res.send(result)

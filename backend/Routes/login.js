@@ -10,6 +10,12 @@ router.get("/",async (req,res)=>{
     res.send(result);
 })
 
+router.get("/:id",async (req,res)=>{
+    const userService = new UserService();
+    const result = await userService.findUser(req.params.id);
+    res.send(result);
+})
+
 router.post("/signup",jsonParser,async (req,res)=>{
     const userService =  new UserService();
     console.log(req.body)

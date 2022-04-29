@@ -9,9 +9,16 @@ import UserService from '../Services/UserService';
 
 function MenuC(props) {
   const [Menu, setMenu] = useState([]);
+  const loggedIn = localStorage.getItem('LoggedIn');
 
   const addCartHandler = useCallback(
     (index) => {
+
+      
+      console.log(Menu)
+      // if(loggedIn){
+
+      // }
       if (!Menu.find(({id}) => id === index._id)) {
       
         setMenu((data) => [

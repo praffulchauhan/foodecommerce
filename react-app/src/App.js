@@ -9,12 +9,14 @@ import Menu from "./Components/Menu/Menu";
 import Cart from "./Components/Cart/Cart";
 import EditProduct from "./Components/Admin/EditProduct";
 import Login from "./Components/Login/Login";
+import LoginAdmin from "./Components/Login/LoginAdmin";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<LoginAdmin/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/cart" element={<Cart />}></Route>

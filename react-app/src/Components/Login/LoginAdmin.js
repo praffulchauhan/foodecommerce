@@ -16,7 +16,7 @@ const LoginAdmin = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">Login</h1>
+          <h2 className="logintext">Admin Login</h2>
           <Link to="/login">
             <button className="btn btn-primary user">User</button>
           </Link>
@@ -24,7 +24,7 @@ const LoginAdmin = () => {
       </div>
       <div className="login">
         <form>
-          <h3>Login</h3>
+          <h3>Admin Login</h3>
           <div className="mb-3">
             <label>Email address</label>
             <input

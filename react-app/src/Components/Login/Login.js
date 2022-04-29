@@ -55,8 +55,8 @@ const Login = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">Login</h1>
-          <Link to="/admin/add">
+          <h2 className="logintext">User Login</h2>
+          <Link to="/admin">
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>

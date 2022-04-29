@@ -11,6 +11,7 @@ router.get('/',jsonParser, async (req, res) => {
   res.send(result);
   })
 
+  
 router.post('/:userId',jsonParser,async (req,res)=>{
 
     const data=Cart.find({ userId:req.params.userId }).remove().exec();

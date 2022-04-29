@@ -22,7 +22,7 @@ router.post("/signup",jsonParser,async (req,res)=>{
     const userService =  new UserService();
     console.log(req.body)
     const result = await userService.setUser(req.body)
-    res.send("User Created")
+    res.send(result)
 })
 
 router.post("/login",jsonParser,async (req,res)=>{

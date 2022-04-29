@@ -1,8 +1,8 @@
 import React from "react";
 
 import "./Signup.css"
-import axios from "axios"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import UserService from "../Services/UserService";
 
 
 const Signup = () => {
@@ -10,6 +10,9 @@ const Signup = () => {
   let lastname=""
   let email=""
   let password=""
+
+  const navigate = useNavigate();
+  
   const firstnameHandler = (event) => {
     firstname = event.target.value
   }
@@ -22,19 +25,21 @@ const Signup = () => {
   const passwordHandler = (event) => {
     password = event.target.value
   }
-  const headers = {
-    "Content-Type": 'application/json'
-  }
+
+
   const submitHandler = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:5000/user/signup', {
+    UserService.signup_user({
       "firstname": firstname,
       "lastname": lastname,
       "email":email,
       "password":password,
-    },headers)
+    })
     .then(function (response) {
       console.log(response);
+      localStorage.setItem('LoggedId',response.data._id)
+      localStorage.setItem('LoggedName',response.data.firstname)
+      navigate('/')
     })
     .catch(function (error) {
       console.log(error);

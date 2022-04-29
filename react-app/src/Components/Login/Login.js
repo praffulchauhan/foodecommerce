@@ -18,7 +18,7 @@ const Login = () => {
   };
   const loginHandler = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/user/login', {
+    axios.post('http://localhost:5000/user/login', {
       "email":email,
       "password":password
     },headers)
@@ -59,7 +59,7 @@ const Login = () => {
       </div>
       <div className="login">
         <form onSubmit={loginHandler}>
-          <Link to="/"><h3>Login</h3></Link>
+          <h3>Login</h3>
           <div className="mb-3">
             <label>Email address</label>
             <input

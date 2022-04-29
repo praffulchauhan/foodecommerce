@@ -27,7 +27,7 @@ const Signup = () => {
   }
   const submitHandler = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3000/user/signup', {
+    axios.post('http://localhost:5000/user/signup', {
       "firstname": firstname,
       "lastname": lastname,
       "email":email,

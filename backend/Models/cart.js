@@ -13,7 +13,7 @@ const cartSchema = new Schema({
         type: Boolean,
         default: false
     },
-    catagory:String
+    category:String
     
 });
 

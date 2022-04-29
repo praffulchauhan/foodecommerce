@@ -15,7 +15,7 @@ const foodSchema = new Schema({
         type: Boolean,
         default: false
     },
-    catagory:String
+    category:String
     
 });
 

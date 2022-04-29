@@ -47,7 +47,7 @@ async updateUser(_id,users){
         ,description:users.description
         ,image:users.image
         ,price:users.price,
-        catagory:users.catagory 
+        category:users.category 
     }})
 
 }

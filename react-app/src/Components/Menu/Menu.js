@@ -79,6 +79,23 @@ function filt_m(){
   setDatax(mexican)
 }
 
+var best_cuisine = [];
+function filt_best(){
+  best_cuisine = resp.filter(function (e) {
+    return e.category == "POPULAR_CUISINES";
+  });
+
+  setDatax(best_cuisine)
+}
+
+var best_sellers = [];
+function filt_bests(){
+  best_sellers = resp.filter(function (e) {
+    return e.category == "BEST_SELLERS";
+  });
+
+  setDatax(best_sellers)
+}
 
 function final_func(x){
 
@@ -120,6 +137,16 @@ console.log(x)
               <div  className="left_space">
                 <li className="nav-item"> 
                 <Link className="nav-link" to=''  onClick={filt_m}>Mexican</Link>
+              </li>
+              </div>
+              <div  className="left_space">
+                <li className="nav-item"> 
+                <Link className="nav-link" to=''  onClick={filt_best}>Popular Cuisines</Link>
+              </li>
+              </div>
+              <div  className="left_space">
+                <li className="nav-item"> 
+                <Link className="nav-link" to=''  onClick={filt_bests}>Best Sellers</Link>
               </li>
               </div>
           

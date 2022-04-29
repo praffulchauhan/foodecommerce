@@ -13,7 +13,9 @@ router.get('/',jsonParser, async (req, res) => {
   res.send(result);
   })
 
-router.post('/:userId',auth.required,jsonParser,async (req,res)=>{
+
+  
+router.post('/:userId',jsonParser,async (req,res)=>{
 
     const data=Cart.find({ userId:req.params.userId }).remove().exec();
 res.send("User Deleted!");

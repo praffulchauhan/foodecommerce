@@ -1,36 +1,32 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Login.css";
-import UserService from "../Services/UserService";
+import axios from "axios"
 
 const Login = () => {
-  const [formErros,setFormErrors] = useState(false);
-
-  const navigate = useNavigate();
-
+  const [formErros,setFormErrors] = useState(false)
+  const headers = {
+    "Content-Type": 'application/json'
+  }
   let email=""
   const emailChangeHandler = (event) => {
     email = event.target.value;
   };
-  
   let password = ""
   const passwordChangeHandler = (e) => {
     password = e.target.value;
   };
-
   const loginHandler = (event) => {
     event.preventDefault();
-    UserService.login_user({
+    axios.post('http://localhost:5000/user/login', {
       "email":email,
       "password":password
-    }).then(function (response) {
+    },headers)
+    .then(function (response) {
       if(response.data===false){
       setFormErrors(true)}
       else{
         setFormErrors(false)
-        localStorage.setItem('LoggedId',response.data._id)
-        localStorage.setItem('LoggedName',response.data.firstname)
-        navigate('/')
       }
       console.log(response);
     })

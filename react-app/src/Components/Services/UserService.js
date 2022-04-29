@@ -38,6 +38,13 @@ class UserService {
         return axios.post(BASE_URL + '/menu/'+ id, headers)
     }
 
+    find_user(id){
+        return axios.get(BASE_URL + '/user/'+ id, headers)
+    }
+    
+    login_user(data){
+        return axios.post(BASE_URL + '/user/login/', data, headers)
+    }
 
 }
 

@@ -18,12 +18,12 @@ router.get('/',jsonParser, async (req, res) => {
 router.post('/:userId',jsonParser,async (req,res)=>{
 
     const data=Cart.find({ userId:req.params.userId }).remove().exec();
-res.send("User Deleted!");
+    res.send("User Deleted!");
 
 })
 
   
-  router.post('/',auth.required,jsonParser, async (req, res) => {
+  router.post('/',jsonParser, async (req, res) => {
 
 var bodi = req.body;
 var result_real = [];

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import "./Login.css";
-import axios from "axios"
+import UserService from "../Services/UserService";
+
 
 const Login = () => {
+  const navigate = useNavigate()
   const [formErros,setFormErrors] = useState(false)
-  const headers = {
-    "Content-Type": 'application/json'
-  }
   let email=""
   const emailChangeHandler = (event) => {
     email = event.target.value;
@@ -18,15 +17,18 @@ const Login = () => {
   };
   const loginHandler = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:5000/user/login', {
+    UserService.login_user({
       "email":email,
       "password":password
-    },headers)
+    })
     .then(function (response) {
       if(response.data===false){
       setFormErrors(true)}
       else{
         setFormErrors(false)
+        localStorage.setItem('LoggedId',response.data._id)
+        localStorage.setItem('LoggedName',response.data.firstname)
+        navigate('/')
       }
       console.log(response);
     })
@@ -38,6 +40,7 @@ const Login = () => {
     setFormErrors(false)
   }
 
+  const name = localStorage.getItem("LoggedName")
   return (
     <div>
       <div className="mynav">
@@ -51,7 +54,7 @@ const Login = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">Login</h1>
+          <h1 className="logintext">{name}</h1>
           <Link to="/admin/add">
             <button className="btn btn-primary admin">Admin</button>
           </Link>

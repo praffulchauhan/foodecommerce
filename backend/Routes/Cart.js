@@ -3,7 +3,9 @@ const router = express.Router();
 const UserserviceCart = require("../Userservice/UserserviceCart");
 const Cart = require('../Models/cart')
 const bodyParser=require("body-parser");
+const auth = require("./auth");
 var jsonParser = bodyParser.json()
+
 
 router.get('/',jsonParser, async (req, res) => {
     const data = new UserserviceCart();
@@ -11,6 +13,8 @@ router.get('/',jsonParser, async (req, res) => {
   res.send(result);
   })
 
+
+  
 router.post('/:userId',jsonParser,async (req,res)=>{
 
     const data=Cart.find({ userId:req.params.userId }).remove().exec();
@@ -19,7 +23,7 @@ res.send("User Deleted!");
 })
 
   
-  router.post('/',jsonParser, async (req, res) => {
+  router.post('/',auth.required,jsonParser, async (req, res) => {
 
 var bodi = req.body;
 var result_real = [];

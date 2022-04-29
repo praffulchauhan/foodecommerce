@@ -4,7 +4,7 @@ import "./NavLogo.css";
 import { Link } from "react-router-dom";
 
 function NavLogo() {
-  localStorage.setItem("message", "saved in browser storage");
+
   function logout() {
     localStorage.clear();
     window.location.href = "/login";

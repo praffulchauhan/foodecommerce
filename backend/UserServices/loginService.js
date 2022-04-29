@@ -23,8 +23,8 @@ class UserService{
         return await User.find({isDel:false}).select(["-salt","-hash"])
     }
 
-    async findUser(){
-        return await User.find({"_id":_id}).select(["-salt","-hash"])
+    async findUser(id){
+        return await User.find({"_id":id}).select(["-salt","-hash"])
     }
 
     async removeUser(_id){

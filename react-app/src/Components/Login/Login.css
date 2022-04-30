@@ -1,8 +1,14 @@
+/* .my {
+  background-image: url(../../images/background.jpg);
+  height: 100vh;
+} */
+
 .mynav {
   display: flex;
   justify-content: space-between;
   box-shadow: 0 20px 20px -20px black;
-  margin-top: 1rem;
+  /* margin-top: -0.2rem;
+  background-color: rgb(150, 150, 196); */
 }
 .logo {
   margin-left: 1rem;

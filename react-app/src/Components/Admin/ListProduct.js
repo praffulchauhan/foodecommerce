@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 const ListProduct = () => {
     const [data,setData] = useState([]);
     const [item,setItem] = useState(false);
-
+    
     function getProduct(){
         UserService.get_product()
         .then((res)=>{

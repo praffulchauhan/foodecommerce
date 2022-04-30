@@ -1,45 +1,47 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import axios from "axios"
+import UserService from "../Services/UserService";
 
 const Login = () => {
-  const [formErros,setFormErrors] = useState(false)
-  const headers = {
-    "Content-Type": 'application/json'
-  }
-  let email=""
+  const navigate = useNavigate();
+  const [formErros, setFormErrors] = useState(false);
+  let email = "";
   const emailChangeHandler = (event) => {
     email = event.target.value;
   };
-  let password = ""
+  let password = "";
   const passwordChangeHandler = (e) => {
     password = e.target.value;
   };
   const loginHandler = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:5000/user/login', {
-      "email":email,
-      "password":password
-    },headers)
-    .then(function (response) {
-      if(response.data===false){
-      setFormErrors(true)}
-      else{
-        setFormErrors(false)
-      }
-      console.log(response);
+    UserService.login_user({
+      email: email,
+      password: password,
     })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        if (response.data === false) {
+          setFormErrors(true);
+        } else {
+          setFormErrors(false);
+          localStorage.setItem("LoggedId", response.data._id);
+          localStorage.setItem("LoggedName", response.data.firstname);
+          navigate("/");
+        }
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   const setFormErrorButtonInvisible = () => {
-    setFormErrors(false)
-  }
+    setFormErrors(false);
+  };
 
+  const name = localStorage.getItem("LoggedName");
   return (
-    <div>
+    <div className="my">
       <div className="mynav">
         <div className="logo">
           <Link to="/" className="navbar-brand">
@@ -51,7 +53,7 @@ const Login = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">Login</h1>
+          <h1 className="logintext">{name}</h1>
           <Link to="/admin/add">
             <button className="btn btn-primary admin">Admin</button>
           </Link>
@@ -87,7 +89,15 @@ const Login = () => {
             Not registered <a href="/signup">Sign Up?</a>
           </p>
         </form>
-        {formErros && <button type="button" onClick={setFormErrorButtonInvisible} class="btn btn-danger">Invalid Credentials</button>}
+        {formErros && (
+          <button
+            type="button"
+            onClick={setFormErrorButtonInvisible}
+            class="btn btn-danger"
+          >
+            Invalid Credentials
+          </button>
+        )}
       </div>
     </div>
   );

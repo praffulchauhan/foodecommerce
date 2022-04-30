@@ -5,3 +5,17 @@
 .margin2 {
   margin-left: 600px;
 }
+
+.inlogName {
+  margin-top: 0.4rem;
+}
+
+.loginName {
+  color: white;
+  font-size: 25px;
+}
+
+.navbar {
+  margin-left: -1rem;
+  width: 100vw !important;
+}

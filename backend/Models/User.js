@@ -17,6 +17,10 @@ const UserSchema = new Schema({
         unique:true,
         required:true,
         trim:true},
+        isAdmin:{
+            type:Boolean,
+            default:false
+        },
     password:String,
     isDel: {
         type:Boolean,

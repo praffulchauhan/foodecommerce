@@ -42,6 +42,11 @@ const Admin = () => {
                 List Product
               </Link>
             </li>
+            <li className="nav-item marginx">
+              <Link to="/" className="nav-link">
+                Logout
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

@@ -27,7 +27,12 @@
   padding: 1rem;
   align-items: center;
   text-align: center;
-  height: 300px;
+  height: 320px;
   margin-top: 10rem;
   margin-left: 30rem;
 }
+
+.invalid{
+  margin-top: 5px;
+}
+

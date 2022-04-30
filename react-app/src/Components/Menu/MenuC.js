@@ -2,13 +2,16 @@ import React, { useCallback, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MenuC.css'
 import Quantity from './Quantity.js'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import UserService from '../Services/UserService';
 
 
 function MenuC(props) {
   const [Menu, setMenu] = useState([]);
   const loggedId = localStorage.getItem('LoggedId');
+  const [item,setItem] = useState(false);
+
+  const navigate = useNavigate();
 
   const addCartHandler = useCallback(
     (index) => {
@@ -18,10 +21,11 @@ function MenuC(props) {
         .then((res)=>{
         if(res.data[0]._id !==''){
             if (!Menu.find(({_id}) => _id === index._id)) {
+
               setMenu((data) => [
                 ...data , index
               ])
-              
+              setItem(true)
             }
             else{
               alert("Already Added")
@@ -44,11 +48,19 @@ function MenuC(props) {
   )
  function final_func(event){
   
- UserService.add_product2(Menu).then((response)=>{
-console.log(Menu);
-  }).catch((err)=>{
-    console.log(err)
-  });
+   console.log(Menu);
+   const ID = localStorage.getItem('LoggedId')
+  UserService.add_product2(Menu,ID)
+  .then((response)=>{
+      if(response.data!==''){
+        if(Menu[0]!==undefined){
+          navigate('/cart')
+        }
+
+      }
+    }).catch((err)=>{
+      console.log(err)
+    });
 
 
 
@@ -71,7 +83,7 @@ console.log(Menu);
                 <p style={{fontSize:20}}><b>Rs {user.price}</b></p>
                 <Quantity/>
                 </div>
-                <Link to='' className='btn btn-danger' onClick={()=> {addCartHandler(user)}}>Add to Cart</Link>
+                <Link to='' className='addbtn btn btn-danger' onClick={()=> {addCartHandler(user)}}>Add to Cart</Link>
               </div>
         
 
@@ -84,8 +96,9 @@ console.log(Menu);
 
 
 </div>
-
-<Link to=''className='proceed-button btn btn-success' onClick = {final_func}>Proceed to Cart</Link>
+{item ? 
+<button to=''className='proceed-button btn btn-success' onClick = {final_func}>Proceed to Cart</button>
+:''}
 
 </div>
 

@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 const OrderPlaced = () => {
     const navigate = useNavigate()
     const name = localStorage.getItem("LoggedName")
-    setTimeout(()=>{navigate("/")},7000);
+    setTimeout(()=>{navigate("/")},3000);
 return (
     
 <div className="orderplace">

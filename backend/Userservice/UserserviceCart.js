@@ -2,9 +2,9 @@ var Cart = require('../Models/cart.js');
 
 class cart{
 
-async to_fetch(){
+async to_fetch(id){
   try {
-    const menu_data = await Cart.find()
+    const menu_data = await Cart.find({"userId":id,isDel: false})
     console.log(menu_data);
     return (menu_data)
   } catch (err) {
@@ -33,6 +33,8 @@ async to_insert(users,users2){
         }
 
 }
+
+
 
 
 

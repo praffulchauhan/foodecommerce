@@ -4,10 +4,10 @@ import "./LoginAdmin.css";
 
 const LoginAdmin = () => {
   return (
-    <div>
+    <div className="my">
       <div className="mynav">
         <div className="logo">
-          <Link to="/login/admin" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img
               src="https://cdn3.vectorstock.com/i/thumb-large/10/77/food-fox-logo-vector-24171077.jpg"
               width="30"
@@ -16,7 +16,7 @@ const LoginAdmin = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">Login</h1>
+          <h2 className="logintext">Login Admin</h2>
           <Link to="/login">
             <button className="btn btn-primary user">User</button>
           </Link>
@@ -24,7 +24,7 @@ const LoginAdmin = () => {
       </div>
       <div className="login">
         <form>
-          <h3>Login</h3>
+          <h3>Login Admin</h3>
           <div className="mb-3">
             <label>Email address</label>
             <input

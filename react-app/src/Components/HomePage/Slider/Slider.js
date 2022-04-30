@@ -4,7 +4,7 @@ import { Carousel } from "react-bootstrap";
 
 const Slider = () => {
   return (
-    <Carousel fade className="my">
+    <Carousel fade className="myslider">
       <Carousel.Item interval={900}>
         <img
           className="d-block w-100"

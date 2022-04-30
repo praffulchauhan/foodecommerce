@@ -9,7 +9,18 @@ const Cart = () => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
   const [cartItems,setCartItems] = useState([])
+  const ID = localStorage.getItem('LoggedId')
+
   const orderPlaceButton = () =>{
+    UserService.delete_productAll(ID)
+    .then((res)=>{
+      if(res.data!==''){
+        
+      }
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
     console.log("x")
     setCartItems([])
     navigate("/orderplaced")
@@ -19,7 +30,7 @@ const Cart = () => {
     const fetchData = async () =>{
       setLoading(true);
       try {
-        const {data: response} = await UserService.get_product();
+        const {data: response} = await UserService.get_product2(ID);
         setCartItems(response);
       } catch (error) {
         console.error(error.message);
@@ -34,6 +45,15 @@ const Cart = () => {
    const handleCartClearButton = () => {
 
      setCartItems([])
+     UserService.delete_productAll(ID)
+     .then((res)=>{
+       if(res.data!==''){
+         console.log(res.data);
+       }
+     })
+     .catch((err)=>{
+       console.log(err);
+     })
    }
     const handleAddProduct = (product) => {
         console.log(product)
@@ -45,12 +65,22 @@ const Cart = () => {
         else{
           setCartItems([...cartItems,{...product,quantity:1}])
         }
+        console.log(cartItems)
       }
       const handleRemoveProduct = (product) => {
         const ProductExist = cartItems.find((item)=>item._id===product._id)
         console.log(ProductExist)
         if(ProductExist.quantity===1){
           setCartItems(cartItems.filter((item)=>item._id!==product._id))
+          UserService.delete_productOne(ProductExist._id)
+          .then((res)=>{
+            if(res.data!==''){
+              console.log(res.data);
+            }
+          })
+          .catch((err)=>{
+            console.log(err);
+          })
         }
         else{
           setCartItems(cartItems.map((item)=>item._id===product._id?{...ProductExist,quantity:ProductExist.quantity-1}:item))
@@ -89,7 +119,7 @@ const Cart = () => {
          <div className="cart-items-total-price"> ${totalprice}</div>
        </div> 
        <div className="cart-items-buyButton">
-         {cartItems.length>0 && (<button className="btn btn-primary btn-lg disabled" aria-disabled="true" onClick={orderPlaceButton}>Buy Now</button>
+         {cartItems.length>0 && (<button className="btn btn-primary btn-lg" onClick={orderPlaceButton}>Buy Now</button>
        )}
        </div>
    </div>

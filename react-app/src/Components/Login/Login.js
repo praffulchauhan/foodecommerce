@@ -41,7 +41,7 @@ const Login = () => {
 
   const name = localStorage.getItem("LoggedName");
   return (
-    <div className="my">
+    <div>
       <div className="mynav">
         <div className="logo">
           <Link to="/" className="navbar-brand">

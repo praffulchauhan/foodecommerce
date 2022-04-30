@@ -54,15 +54,16 @@ const Login = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">Login</h1>
-          <Link to="/admin/add">
+          <h2 className="logintext">Login User</h2>
+          <Link to="/admin">
+
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>
       </div>
       <div className="login">
         <form onSubmit={loginHandler}>
-          <h3>Login</h3>
+          <h3>Login User</h3>
           <div className="mb-3">
             <label>Email address</label>
             <input

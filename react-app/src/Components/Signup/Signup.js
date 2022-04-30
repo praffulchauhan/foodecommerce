@@ -59,8 +59,8 @@ const Signup = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">Login</h1>
-          <Link to="/admin/add">
+          <h3 className="logintext">Signup User</h3>
+          <Link to="/admin">
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>

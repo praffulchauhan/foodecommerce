@@ -1,14 +1,20 @@
 import React from "react";
 import "./Cart.css"
 import { useState,useEffect } from "react";
+import {useNavigate} from "react-router-dom"
 import NavLogo from "../HomePage/NavLogo/NavLogo";
 import UserService from "../Services/UserService";
 
 const Cart = () => {
-  
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
   const [cartItems,setCartItems] = useState([])
-
+  const orderPlaceButton = () =>{
+    console.log("x")
+    setCartItems([])
+    navigate("/orderplaced")
+    
+  }
   useEffect(() => {
     const fetchData = async () =>{
       setLoading(true);
@@ -30,9 +36,10 @@ const Cart = () => {
      setCartItems([])
    }
     const handleAddProduct = (product) => {
-        const ProductExist = cartItems.find((item)=>item.id===product.id)
+        console.log(product)
+        const ProductExist = cartItems.find((item)=>item._id===product._id)
         if(ProductExist){
-          setCartItems(cartItems.map((item)=>item.id === product.id?
+          setCartItems(cartItems.map((item)=>item._id === product._id?
           {...ProductExist,quantity:ProductExist.quantity+1}:item))
         }
         else{
@@ -40,13 +47,13 @@ const Cart = () => {
         }
       }
       const handleRemoveProduct = (product) => {
-        const ProductExist = cartItems.find((item)=>item.id===product.id)
+        const ProductExist = cartItems.find((item)=>item._id===product._id)
         console.log(ProductExist)
         if(ProductExist.quantity===1){
-          setCartItems(cartItems.filter((item)=>item.id!==product.id))
+          setCartItems(cartItems.filter((item)=>item._id!==product._id))
         }
         else{
-          setCartItems(cartItems.map((item)=>item.id===product.id?{...ProductExist,quantity:ProductExist.quantity-1}:item))
+          setCartItems(cartItems.map((item)=>item._id===product._id?{...ProductExist,quantity:ProductExist.quantity-1}:item))
         }
       }
   const totalprice = cartItems.reduce((price,item)=>price+item.quantity*item.price,0)
@@ -82,7 +89,7 @@ const Cart = () => {
          <div className="cart-items-total-price"> ${totalprice}</div>
        </div> 
        <div className="cart-items-buyButton">
-         {cartItems.length>0 && (<a href="#" className="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Buy Now</a>
+         {cartItems.length>0 && (<button className="btn btn-primary btn-lg disabled" aria-disabled="true" onClick={orderPlaceButton}>Buy Now</button>
        )}
        </div>
    </div>

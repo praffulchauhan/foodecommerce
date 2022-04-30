@@ -39,8 +39,8 @@ const Login = () => {
   const setFormErrorButtonInvisible = () => {
     setFormErrors(false)
   }
-
-  const name = localStorage.getItem("LoggedName")
+  
+  
   return (
     <div>
       <div className="mynav">
@@ -54,9 +54,9 @@ const Login = () => {
               alt=""
             />
           </Link>
-          <h1 className="logintext">{name}</h1>
-          <h3>Login User</h3>
+          <h2 className="logintext">Login User</h2>
           <Link to="/admin">
+
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>

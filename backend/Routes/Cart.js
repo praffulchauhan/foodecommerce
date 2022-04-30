@@ -7,9 +7,10 @@ const auth = require("./auth");
 var jsonParser = bodyParser.json()
 
 
-router.get('/',jsonParser, async (req, res) => {
+router.get('/:userId',jsonParser, async (req, res) => {
+
     const data = new UserserviceCart();
- const result = await data.to_fetch();
+ const result = await data.to_fetch(req.params.userId);
   res.send(result);
   })
 
@@ -22,15 +23,31 @@ router.post('/:userId',jsonParser,async (req,res)=>{
 
 })
 
+router.get('/delete/:userId',jsonParser, async (req, res) => {
+
+  const data = new UserserviceCart();
+  const result = Cart.find({ userId:req.params.userId }).remove().exec()
+  res.send(result);
+})
+
+router.get('/deleteOne/:proId',jsonParser, async (req, res) => {
+
+  const data = new UserserviceCart();
+  const result = Cart.find({ "_id":req.params.proId }).remove().exec()
+  res.send(result);
+})
+
+
   
-  router.post('/',jsonParser, async (req, res) => {
+  router.post('/add/:id',jsonParser, async (req, res) => {
 
 var bodi = req.body;
+var id = req.params.id;
 var result_real = [];
 
 for(let i=0;i<bodi.length;i++){
   const users = new Cart({
-    userId:bodi[i].userId,
+    userId:id,
     name: bodi[i].name,
     price: bodi[i].price,
     quantity: bodi[i].quantity,
@@ -41,7 +58,7 @@ for(let i=0;i<bodi.length;i++){
 
 
   const users2 = {    
-    userId:bodi[i].userId,
+    userId:id,
     name: bodi[i].name,
     price: bodi[i].price,
     quantity: bodi[i].quantity,

@@ -30,13 +30,21 @@ class UserService {
     }
 
     // CART Product
-    add_product2(data){
-        return axios.post(BASE_URL + '/cart', data, headers)
+    add_product2(data,id){
+        return axios.post(BASE_URL + '/cart/add/' + id , data, headers)
     }
 
 
-    get_product2(){
-        return axios.get(BASE_URL + '/cart', headers)
+    get_product2(id){
+        return axios.get(BASE_URL + '/cart/' + id, headers)
+    }
+
+    delete_productAll(id){
+        return axios.get(BASE_URL + '/cart/delete/' + id, headers)
+    }
+
+    delete_productOne(id){
+        return axios.get(BASE_URL + '/cart/deleteOne/' + id, headers)
     }
 
     // USER

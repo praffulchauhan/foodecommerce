@@ -46,7 +46,7 @@ function emailHandler(event){
 
 
   return (
-    <div>
+    <div className="my">
       <div className="mynav">
         <div className="logo">
           <Link to="/" className="navbar-brand">

@@ -9,6 +9,7 @@
 }
 .logintext {
   margin-left: 28rem;
+  margin-top: 0.3rem;
 }
 
 .user {
@@ -32,7 +33,13 @@
   margin-left: 30rem;
 }
 
-.invalid{
-  margin-top: 5px;
+.my {
+  background-image: url(../../images/background.jpg);
+  background-size: cover;
+  height: 100vh !important;
+  margin-top: -1rem;
 }
 
+.invalid {
+  margin-top: 5px;
+}

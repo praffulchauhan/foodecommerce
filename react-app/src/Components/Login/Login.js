@@ -1,48 +1,45 @@
 import React, { useState } from "react";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import UserService from "../Services/UserService";
 
-
 const Login = () => {
-  const navigate = useNavigate()
-  const [formErros,setFormErrors] = useState(false)
-  let email=""
+  const navigate = useNavigate();
+  const [formErros, setFormErrors] = useState(false);
+  let email = "";
   const emailChangeHandler = (event) => {
     email = event.target.value;
   };
-  let password = ""
+  let password = "";
   const passwordChangeHandler = (e) => {
     password = e.target.value;
   };
   const loginHandler = (event) => {
     event.preventDefault();
     UserService.login_user({
-      "email":email,
-      "password":password
+      email: email,
+      password: password,
     })
-    .then(function (response) {
-      if(response.data===false){
-      setFormErrors(true)}
-      else{
-        setFormErrors(false)
-        localStorage.setItem('LoggedId',response.data._id)
-        localStorage.setItem('LoggedName',response.data.firstname)
-        navigate('/')
-      }
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        if (response.data === false) {
+          setFormErrors(true);
+        } else {
+          setFormErrors(false);
+          localStorage.setItem("LoggedId", response.data._id);
+          localStorage.setItem("LoggedName", response.data.firstname);
+          navigate("/");
+        }
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   const setFormErrorButtonInvisible = () => {
-    setFormErrors(false)
-  }
-  
-  
+    setFormErrors(false);
+  };
   return (
-    <div>
+    <div className="my">
       <div className="mynav">
         <div className="logo">
           <Link to="/" className="navbar-brand">
@@ -56,7 +53,6 @@ const Login = () => {
           </Link>
           <h2 className="logintext">Login User</h2>
           <Link to="/admin">
-
             <button className="btn btn-primary admin">Admin</button>
           </Link>
         </div>
@@ -91,7 +87,15 @@ const Login = () => {
             Not registered <a href="/signup">Sign Up?</a>
           </p>
         </form>
-        {formErros && <button type="button" onClick={setFormErrorButtonInvisible} class="btn btn-danger">Invalid Credentials</button>}
+        {formErros && (
+          <button
+            type="button"
+            onClick={setFormErrorButtonInvisible}
+            class="btn btn-danger"
+          >
+            Invalid Credentials
+          </button>
+        )}
       </div>
     </div>
   );

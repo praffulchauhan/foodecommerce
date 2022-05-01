@@ -1,14 +1,22 @@
+.my {
+  background-image: url(../../images/background.jpg);
+  background-size: cover;
+  height: 100vh !important;
+  margin-top: -1rem;
+}
+
 .mynav {
   display: flex;
   justify-content: space-between;
   box-shadow: 0 20px 20px -20px black;
-  margin-top: 1rem;
+  background-color: rgb(150, 150, 196);
 }
 .logo {
   margin-left: 1rem;
 }
 .logintext {
   margin-left: 33rem;
+  margin-top: 0.3rem;
 }
 
 .admin {

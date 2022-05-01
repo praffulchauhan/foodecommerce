@@ -1,13 +1,8 @@
-
-
 .App {
-    text-align: center;
-    justify-content: center;
-    margin-left: 27rem;
-  }
-
-
-
+  text-align: center;
+  justify-content: center;
+  margin-left: 27rem;
+}
 
 .signup {
   justify-content: center;
@@ -23,3 +18,9 @@
   margin-top: 5rem;
 }
 
+.my {
+  background-image: url(../../images/background.jpg);
+  background-size: cover;
+  height: 100vh !important;
+  margin-top: -1rem;
+}

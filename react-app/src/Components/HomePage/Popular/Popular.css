@@ -53,3 +53,7 @@
   transform-origin: 50% 50%;
   transition: transform 1s, filter 0.5s ease-out;
 }
+
+.checkbtn{
+  margin-left: 6rem;
+}

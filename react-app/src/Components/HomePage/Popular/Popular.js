@@ -12,8 +12,8 @@ const Popular = () => {
             id="img1"
           />
           <div className="popular-text">
-            <h3>Popular Cuisines</h3>
-            <Link to="/menu" className="btn btn-primary">
+            <h3>CHECK OUR MENU</h3>
+            <Link to="/menu" className="checkbtn btn btn-primary">
               Check Now
             </Link>
           </div>
@@ -27,7 +27,7 @@ const Popular = () => {
           />
           <div className="popular-text second">
             <h3>Best Sellers</h3>
-            <Link to="/menu" className="btn btn-primary">
+            <Link to="/menu" className="checkbtn btn btn-primary">
               Check Now
             </Link>
           </div>

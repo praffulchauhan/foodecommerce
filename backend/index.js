@@ -16,7 +16,7 @@ app.use("/cart", require("./Routes/Cart.js"));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-  mongoose.connect("mongodb://localhost/food_ecommerce").then((result)=>{
+  mongoose.connect("mongodb://mongodb:27017/food_ecommerce").then((result)=>{
     console.log("Database Connected")
 }).catch((e)=>{
     console.log("Database connection failed")

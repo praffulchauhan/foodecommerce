@@ -81,7 +81,7 @@ function MenuC(props) {
                 <p className="card-text">{user.description}</p>
                 <div className='dll'>
                 <p style={{fontSize:20}}><b>Rs {user.price}</b></p>
-                <Quantity/>
+                {/* <Quantity/> */}
                 </div>
                 <Link to='' className='addbtn btn btn-danger' onClick={()=> {addCartHandler(user)}}>Add to Cart</Link>
               </div>

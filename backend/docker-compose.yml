@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  mongodb:
+    image: bitnami/mongodb:latest
+    ports:
+      - 27017:27017
+
+  backend:
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend:/app/backend
+    links:
+      - mongodb
+    depends_on:
+      - mongodb

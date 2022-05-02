@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Admin.css";
 
 const Admin = () => {
+
+  const navigate = useNavigate();
+  function loggedOut(){
+    localStorage.clear();
+    navigate('/');
+  }
   return (
     <div className="myadmin">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,9 +49,9 @@ const Admin = () => {
               </Link>
             </li>
             <li className="nav-item marginx">
-              <Link to="/" className="nav-link">
+              <button className="nav-link" onClick={loggedOut}>
                 Logout
-              </Link>
+              </button>
             </li>
           </ul>
         </div>

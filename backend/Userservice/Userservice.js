@@ -33,12 +33,6 @@ async to_insert(users,users2){
 }
 
 
-
-async removeUser(_id){
-    return await Food.updateOne({"_id":_id}, {$set:{ isDel: true }})
-}
-
-
 async updateUser(_id,users){
 
     return await Food.updateOne({"_id":_id}, {$set:{ 

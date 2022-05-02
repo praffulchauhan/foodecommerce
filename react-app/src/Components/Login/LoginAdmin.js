@@ -16,6 +16,9 @@ UserService.login_user({
 }).then((response)=>{
   if(response.data.isAdmin){
     setFormErrors(false)
+    localStorage.setItem("LoggedId", response.data._id);
+    localStorage.setItem("LoggedName", response.data.firstname);
+    localStorage.setItem("isAdmin",response.data.isAdmin);
     navigate('/admin/add');
   }else  {setFormErrors(true)}
 

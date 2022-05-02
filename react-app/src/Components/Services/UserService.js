@@ -26,7 +26,7 @@ class UserService {
     }
 
     delete_product(id){
-        return axios.post(BASE_URL + '/menu/'+ id, headers)
+        return axios.get(BASE_URL + '/menu/'+ id, headers)
     }
 
     // CART Product

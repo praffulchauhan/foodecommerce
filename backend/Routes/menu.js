@@ -40,16 +40,15 @@ router.get('/', async (req, res) => {
   })
 
 
-  router.post('/:id', jsonParser, async (req, res) => {
+  router.get('/:id', jsonParser, async (req, res) => {
     
-const data = new Userservice();
-
-const result = await data.removeUser(req.params.id);
-
-res.send(result);
+  const data = new Userservice();
+  const result = Food.find({ _id:req.params.id }).remove().exec()
+  res.send(result);
 
 
   })
+
 
   router.post('/update/:id', jsonParser, async (req, res) => {
     

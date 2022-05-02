@@ -13,6 +13,9 @@ import OrderPlaced from "./Components/OrderPlaced.js/OrderPlaced";
 import LoginAdmin from "./Components/Login/LoginAdmin";
 
 function App() {
+  const isAdmin = localStorage.getItem('isAdmin');
+
+  console.log(isAdmin)
   return (
     <div>
       <Routes>
@@ -23,8 +26,20 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/orderplaced" element={<OrderPlaced/>}/>
+        {isAdmin == 'true'?
+        
         <Route path="/admin/add" element={<AddProduct />} />
+
+        :
+        <Route path="/admin/add" element={<Home />} />
+        }
+
+        {isAdmin === 'true'?
         <Route path="/admin/list" element={<ListProduct />} />
+        :
+        <Route path="/admin/list" element={<Home />} />
+        }
+        
         <Route path="/admin/edit/:id" element={<EditProduct/>}/>
       </Routes>
     </div>

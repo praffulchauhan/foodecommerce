@@ -3,8 +3,8 @@
     - A foodecommerce Website an online restaurant search and delivery platform
   
 # Links
-  Github Url --> 
-  DockerHub Url -->
+  -Github Url --> 
+  -DockerHub Url -->
 
 ##--------------------Folder Structure--------------------------
   ├── README.md

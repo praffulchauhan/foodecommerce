@@ -1,11 +1,11 @@
 # foodecommerce
   -FoodFox --> A foodecommerce Website an online restaurant search and delivery platform.
   
-##-----------------Links---------------------------------------
+##Links
 Github Url --> 
 DockerHub Url -->
 
-##--------------------Folder Structure--------------------------
+##Folder Structure
 ├── README.md
 ├── foodecommerce
 ├── backend
@@ -27,14 +27,14 @@ DockerHub Url -->
                 └── Services
                 └── Signup
                 
-##-------------------Running instructions-------------------------------
+##Running instructions
 Start mongodb service
   -Server Side -> http://localhost:5000/
       Command-->foodecommerce/backend$ nodemon index.js
   -Client Side -> http://localhost:3000/
       Command-->foodecommerce/react-app$ npm start
       
-##---------------------Routes-----------------------------------------------
+##Routes
   HomePage -> http://localhost:3000/
   MenuPage -> http://localhost:3000/menu
   UserLogin -> http://localhost:3000/login
@@ -44,15 +44,15 @@ Start mongodb service
         └── AdminListProduct ->  http://localhost:3000/admin/list
   Cart -> http://localhost:3000/cart
  
-##-------------------------Commands to Dockerize ------------------------------
+##Commands to Dockerize
 -Server Side->
   -sudo docker-compose up  --> will create images and containers for serverside and also will run the mongodb service
 -Client Side->
   -sudo docker build myreact:1.0 .
   -sudo docker run --name reactapp -p 3000:3000 myreactapp:1.0
   
-##--------------------------TODO------------------------------------------------
+##TODO
 
 
-##------------------- More resources--------------------------------------
+##More resources
 react-app --> README.md

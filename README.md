@@ -1,7 +1,8 @@
 # foodecommerce
-  -FoodFox --> A foodecommerce Website an online restaurant search and delivery platform.
+**FoodFox**
+- A foodecommerce Website an online restaurant search and delivery platform
   
-##-----------------Links---------------------------------------
+# Links
 Github Url --> 
 DockerHub Url -->
 

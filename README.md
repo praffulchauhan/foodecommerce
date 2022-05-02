@@ -65,9 +65,16 @@ Go to the react-app folder
     -Client Side->
         -sudo docker build myreact:1.0 .
         -sudo docker run --name reactapp -p 3000:3000 myreactapp:1.0
+
+# Project Title
+
+A brief description of what this project does and who it's for
+
+
 ## 🔗 Links
-    -Github -> https://github.com/praffulchauhan/foodecommerce
-    -DockerHub ->
-    -AWS EC2 ->
-    -Linkedin ->
+[![Website](https://img.shields.io/badge/Website-Link-yellowgreen)](http://23.22.66.62:3000/)
+[![github](https://img.shields.io/badge/github-Link-yellowgreen)](https://github.com/praffulchauhan/foodecommerce/)
+[![linkedin](https://img.shields.io/badge/Linkedin-Link-yellowgreen)]()
+[![DockerHub](https://img.shields.io/badge/DockerHub-Link-yellowgreen)]()
+
 

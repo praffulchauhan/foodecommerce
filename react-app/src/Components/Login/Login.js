@@ -27,6 +27,8 @@ const Login = () => {
           setFormErrors(false);
           localStorage.setItem("LoggedId", response.data._id);
           localStorage.setItem("LoggedName", response.data.firstname);
+          localStorage.setItem("isAdmin",response.data.isAdmin);
+          
           navigate("/");
         }
         console.log(response);
